@@ -17,6 +17,25 @@ whole numbers.
 because the original commented line of code was missing a semi-colon at 
 the end.
 
+### W3
+
+Parameters: int friendshipLevel because we need to check if
+the character's level is high enough to know the character's
+secret.
+Return type: bool KnowsSecret because either the player knows
+the character's secret or not (true or false)
+
+Table 10
+
+1. Classes are used to implement/create components. Classes are 
+like the ingredients of a plate. For example, classes can be the 
+egg, or cake batter, and the component is the cake.
+
+2. We think the balls get extremely bright if they bounce
+too much because each time they bounce the ball color multiplier
+is applied making the values higher and in turn making the color
+brighter.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
