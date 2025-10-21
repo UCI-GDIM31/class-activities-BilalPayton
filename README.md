@@ -38,6 +38,8 @@ brighter.
 
 ### W4
 
+Table #10
+
 In line 5, a member float variable named "_moveSpeed" is being 
 created to store a value of 1 and it can be edited inside the 
 inspector because of  [SerializeField].
@@ -47,6 +49,15 @@ to the "_moveSpeed" member variable and the deltaTime member variable,
 and the result is being stored in a float variable named translation.
 
 In line 25, the Translation method is being called on a transform object.
+
+1. I added a Capsule Collider to the Cat object and adjusted it based on
+it's size. I also added Rigidbodies to the Cat object, the SoccerBall object,
+and the goal object. I checked Is Trigger for the Cat and SoccerBall while I
+left Is Trigger unchecked for the Goal object.
+
+2. My Cat object was making the world flip out while it was walking
+in the world. I fixed this by freezing the X and Z axis positions
+in it's Rigidbody and checking Is Trigger on it.
 
 ## Open-Source Assets
 ### W1
