@@ -36,6 +36,18 @@ too much because each time they bounce the ball color multiplier
 is applied making the values higher and in turn making the color
 brighter.
 
+### W4
+
+In line 5, a member float variable named "_moveSpeed" is being 
+created to store a value of 1 and it can be edited inside the 
+inspector because of  [SerializeField].
+
+In line 22, the method GetAxis is being called and being multiplied
+to the "_moveSpeed" member variable and the deltaTime member variable,
+and the result is being stored in a float variable named translation.
+
+In line 25, the Translation method is being called on a transform object.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
