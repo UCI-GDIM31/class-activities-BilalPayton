@@ -59,6 +59,20 @@ left Is Trigger unchecked for the Goal object.
 in the world. I fixed this by freezing the X and Z axis positions
 in it's Rigidbody and checking Is Trigger on it.
 
+### W5
+I had no questions.
+
+1. The Deer class needs a NavMeshAgent member variable and a Transform member
+variable.
+
+2. The Deer class also needs a Start() method, a GetComponent() method, and
+a SetDestination() method.
+
+3. The Start() method should be used to move the deer at the start of the game,
+the GetComponent() method should be used to get the NavMeshAgent component in the
+inspector, and the SetDestination() method should be used to set the destination
+where the deer should walk to using the NavMeshAgent component.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
