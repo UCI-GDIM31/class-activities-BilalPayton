@@ -73,6 +73,18 @@ the GetComponent() method should be used to get the NavMeshAgent component in th
 inspector, and the SetDestination() method should be used to set the destination
 where the deer should walk to using the NavMeshAgent component.
 
+### W6
+https://docs.google.com/document/d/1O1Z4J196hUgrUu8E1KjuXLG0qGOnDDlSYW_Ya_sPJhE/edit?tab=t.0
+
+1. The BatW6 class needs a int member variable that can be tuned in the inspector
+representing the bat's speed.
+
+2. The BatW6 class needs a Start() method, and needs a Update() method for when the 
+bat stops chasing the player.
+
+3. A Start() method is needed for when the bat starts chasing the player and an
+Update() method is needed for when the bat stops chasing the player.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
