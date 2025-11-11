@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class MuskratW7 : MonoBehaviour
 {
@@ -45,13 +46,19 @@ public class MuskratW7 : MonoBehaviour
         //
         // You might want to look below Step 3 for an example :D
         
-        float leftright = Input.GetAxis("Horizontal");
+        float leftright = UnityEngine.Input.GetAxis("Horizontal");
+
+        Vector3 worldUp = transform.TransformDirection(Vector3.up);
+        transform.RotateAround(
+            transform.position,
+            worldUp,
+            leftright * _rotationSpeed * Time.deltaTime );
         
 
 
         // STEP 3 -------------------------------------------------------------
 
-        float forward = Input.GetAxis("Vertical");
+        float forward = UnityEngine.Input.GetAxis("Vertical");
         Vector3 axis = transform.TransformDirection(Vector3.right);
         transform.RotateAround(
             _sphereTransform.position,
@@ -65,6 +72,26 @@ public class MuskratW7 : MonoBehaviour
         //      the Muskrat.
         // The Muskrat should never play the "flying" animation while on a
         //      bubble.
+
+        if (_rigidbody.linearVelocity.x > 0.0f)
+        {
+            _animator.SetBool("running", true);
+        }
+
+        else if (_rigidbody.linearVelocity.x > 0.0f)
+        {
+            _animator.SetBool("running", false);
+        }
+
+        if (Mathf.Abs(_rigidbody.linearVelocity.y) >= 0.2f)
+        {
+            _animator.SetBool("flying", true);
+        }
+
+        else
+        {
+            _animator.SetBool("flying", false);
+        }
 
 
         // STEP 5 -------------------------------------------------------------
@@ -85,18 +112,20 @@ public class MuskratW7 : MonoBehaviour
         //      https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
         //      like up, left, right, or forward.
 
-        float leftright = Input.GetAxis("Horizontal");
+        float leftright = UnityEngine.Input.GetAxis("Horizontal");
+
+        transform.Rotate(Vector3.up * leftright * _rotationSpeed * Time.deltaTime);
 
         // STEP 1 -------------------------------------------------------------
 
 
         // STEP 2 -------------------------------------------------------------
-        float movement = Input.GetAxis("Vertical");
-
+        float movement = UnityEngine.Input.GetAxis("Vertical");
+        
         // This line of code is incorrect. 
         // Replace it with a different line of code that uses 'movement' to
         //      move the Muskrat forwards and backwards.
-        transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
+        transform.Translate(movement * Vector3.forward * _moveSpeed * Time.deltaTime);
 
         // STEP 2 -------------------------------------------------------------
 
@@ -108,6 +137,26 @@ public class MuskratW7 : MonoBehaviour
         // You may also find the absolute value method, Mathf.Abs(), helpful:
         //      https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mathf.Abs.html
 
+        if (_rigidbody.linearVelocity.x > 0.0f)
+        {
+            _animator.SetBool("running", true);
+        }
+
+        else if (_rigidbody.linearVelocity.x > 0.0f)
+        {
+            _animator.SetBool("running", false);
+        }
+
+        if (Mathf.Abs(_rigidbody.linearVelocity.y) >= 0.2f)
+        {
+            _animator.SetBool("flying", true);
+        }
+
+        else
+        {
+            _animator.SetBool("flying", false);
+        }
+
         
         // STEP 4 -------------------------------------------------------------
     }
@@ -115,7 +164,7 @@ public class MuskratW7 : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
         {
             _rigidbody.isKinematic = false;
             _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);

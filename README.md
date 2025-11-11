@@ -85,6 +85,13 @@ bat stops chasing the player.
 3. A Start() method is needed for when the bat starts chasing the player and an
 Update() method is needed for when the bat stops chasing the player.
 
+### W7
+https://docs.google.com/document/d/1bQPAv1mL70Yfxq_kHDeEPWBOi8I3CRvs9G-moxCYlJU/edit?tab=t.0
+I did the gameplay and physics.
+
+For step 2, if we are only adding to the Muskrat's position, rotating forwards and backwards on the z-axis
+won't be the same as rotating forwards and backwards for the Muskrat's axis.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
